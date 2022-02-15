@@ -7,13 +7,15 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { CityComponent } from './city/city.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CityListComponent } from './city-list/city-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    CityComponent
+    CityComponent,
+    CityListComponent
   ],
   imports: [
     BrowserModule,
