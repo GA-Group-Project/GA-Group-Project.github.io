@@ -1,0 +1,15 @@
+<div class="city-list">
+  <h2>Cities</h2>
+  <div *ngFor="let city of cityList; index as i;" class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="https://st3.depositphotos.com/1001146/14087/i/600/depositphotos_140879866-stock-photo-aerial-view-of-miami-beach.jpg" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{cityList[i].name}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
