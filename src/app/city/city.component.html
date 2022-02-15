@@ -1,6 +1,6 @@
 <div class="city-container">
   <app-city-list></app-city-list>
-  <div class="city">
+  <div *ngIf="city" class="city">
     <h1>{{city.name}}</h1>
     <img src="{{city.img}}">
   </div>
