@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CITIES } from './cities';
 
 @Component({
   selector: 'app-city-list',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./city-list.component.css']
 })
 export class CityListComponent implements OnInit {
+
+  city: any;
 
   cityList: { id: number, name: string, img: string }[] = [
     { "id": 0, "name": "London" , "img":"https://st3.depositphotos.com/1001146/14087/i/600/depositphotos_140879866-stock-photo-aerial-view-of-miami-beach.jpg"},
@@ -16,6 +20,6 @@ export class CityListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+  }
 }

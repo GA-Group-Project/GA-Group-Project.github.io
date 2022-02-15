@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'city',
     component: CityComponent
+  },
+  {
+    path: 'city/:id',
+    component: CityComponent
   }
 ];
 
