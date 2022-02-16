@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { POSTS } from './posts';
 import { ActivatedRoute } from '@angular/router';
-import { CityComponent } from '../city/city.component';
 import { CITIES } from '../city-list/cities';
-import { CityListComponent } from '../city-list/city-list.component';
+import { ElementRef} from "@angular/core";
 
 
 @Component({
@@ -17,11 +16,14 @@ export class PostComponent implements OnInit {
 
   post: any;
   cities = CITIES
-  
+  @Input('postNumber') postNumber: number;
 
-posts = POSTS
- // posts:any = require('./posts');
-  constructor(private route: ActivatedRoute) { }
+  posts = POSTS
+
+  constructor(private route: ActivatedRoute, private ele: ElementRef) {
+  this.postNumber = this.ele.nativeElement.getAttribute('postNumber');
+
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -29,13 +31,9 @@ posts = POSTS
         let paramId: string = params.get('id') || '';
         return post.id === parseInt(paramId)
       })
-
     })
   }
 
-
-
-  
 }
 
 

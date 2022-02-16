@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CityListComponent } from '../city-list/city-list.component';
 import { CITIES } from '../city-list/cities';
 import { ActivatedRoute } from '@angular/router';
+import { POSTS } from "../post/posts";
 
 
 @Component({
@@ -12,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CityComponent implements OnInit {
   city: any;
   cities = CITIES;
+  posts = POSTS;
 
 
   constructor(private route: ActivatedRoute) { }
