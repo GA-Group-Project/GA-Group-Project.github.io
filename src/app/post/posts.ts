@@ -5,7 +5,7 @@ export const POSTS = [
     "title": "London.",
     desc: "London is great",
     cityId: 0,
-    date: "2019-01-20"
+    date: "2019-01-17"
   },
 
   {
@@ -23,7 +23,7 @@ export const POSTS = [
     "title": "SF is awesome!",
     desc: "SF ",
     cityId: 2,
-    date: "2019-01-16"
+    date: "2019-01-18"
 
   },
 
@@ -33,7 +33,7 @@ export const POSTS = [
     "title": "Seattle is the best. ",
     desc: "Seattle!",
     cityId: 3,
-    date: "2019-01-16"
+    date: "2019-01-19"
   },
 
   {
@@ -42,7 +42,7 @@ export const POSTS = [
     "title": "Fundon! great!",
     desc: "FUndon",
     cityId: 0,
-    date: "2019-01-16"
+    date: "2019-01-20"
   },
 
 ]
