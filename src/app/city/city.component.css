@@ -2,3 +2,9 @@
   display: flex;
   flex-direction: row;
 }
+app-city-list{
+  width: 50%;
+}
+.city{
+  width: 50%;
+}
