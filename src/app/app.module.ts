@@ -9,6 +9,8 @@ import { CityComponent } from './city/city.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CityListComponent } from './city-list/city-list.component';
 import { PostComponent } from './post/post.component';
+import { PostListComponent } from './post-list/post-list.component';
+import { PostPageComponent } from './post-page/post-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { PostComponent } from './post/post.component';
     HomeComponent,
     CityComponent,
     CityListComponent,
-    PostComponent
+    PostComponent,
+    PostListComponent,
+    PostPageComponent
   ],
   imports: [
     BrowserModule,
