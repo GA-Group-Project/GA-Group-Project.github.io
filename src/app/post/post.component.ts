@@ -19,20 +19,23 @@ export class PostComponent implements OnInit {
   @Input('postNumber') postNumber: number;
 
   posts = POSTS
+  postDate = new Date();
+
 
   constructor(private route: ActivatedRoute, private ele: ElementRef) {
-  this.postNumber = this.ele.nativeElement.getAttribute('postNumber');
-  // this.sortArray(this.posts);
+  this.sortArray(this.posts);
+    this.postNumber = this.ele.nativeElement.getAttribute('postNumber');
+    console.log(this.posts)
   }
 
-  // sortArray(arr: any): any{
-  //   this.posts.sort(function(a,b){
-  //     // Turn your strings into dates, and then subtract them
-  //     // to get a value that is either negative, positive, or zero.
-  //     // @ts-ignore
-  //     return  new Date(b.date) - new Date(a.date);
-  //   });
-  // }
+  sortArray(arr: any): any{
+    this.posts.sort(function(a,b){
+      // Turn your strings into dates, and then subtract them
+      // to get a value that is either negative, positive, or zero.
+      // @ts-ignore
+      return  new Date(b.date) - new Date(a.date);
+    });
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {

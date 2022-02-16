@@ -16,7 +16,19 @@ export class CityComponent implements OnInit {
   posts = POSTS;
 
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {
+    this.sortArray(this.posts);
+   }
+
+  sortArray(arr: any): any{
+    this.posts.sort(function(a,b){
+      // Turn your strings into dates, and then subtract them
+      // to get a value that is either negative, positive, or zero.
+      // @ts-ignore
+      return  new Date(b.date) - new Date(a.date);
+    });
+  }
+
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
