@@ -2,10 +2,8 @@
 
 <div class="post">
     <h2>Posts</h2>
-     <a *ngFor="let post of posts; index as i;"  routerLink = "/posts/{{i}}">
-      <div *ngIf="posts[i].cityId === cities[0].id"> </div>
-   
-       
+     <a  routerLink = "/posts/{{postNumber}}" >
+
       <div class="card mb-3" style="max-width: 540px;">
         <div class="row g-0">
           <div class="col-md-4">
@@ -13,20 +11,11 @@
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">test post</h5>
+              <h5 class="card-title">{{post.title}}</h5>
               <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit minus cupiditate molestiae consequatur quaerat distinctio ipsam eum natus dolorem molestias, incidunt repellat magni impedit aperiam eos animi repudiandae accusamus ullam! </p>
             </div>
           </div>
         </div>
       </div>
-    </a> 
+    </a>
   </div>
-
-<!-- 
-  <div class="post-container">
-    <app-post></app-post>    <div *ngIf="post" class="post">
-      <h1>{{post.Title}}</h1>
-      <img src="{{post.img}}">
-      <app-post></app-post>
-    </div>
-  </div> -->

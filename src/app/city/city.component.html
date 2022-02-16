@@ -3,7 +3,12 @@
   <div *ngIf="city" class="city">
     <h1>{{city.name}}</h1>
     <img src="{{city.img}}">
-    <app-post></app-post>
+
+    <div *ngFor="let post of posts; index as i;">
+      <div *ngIf="posts[i].cityId === city.id">
+        <app-post [postNumber]="i"></app-post>
+      </div>
+    </div>
 
   </div>
 </div>

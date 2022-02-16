@@ -13,16 +13,16 @@ const routes: Routes = [
     path: 'city',
     component: CityComponent,
   },
+  {
+    path: 'posts/:id',
+    component: PostComponent
+  },
 
 
   {
     path: 'city/:id',
     component: CityComponent,
     children: [
-      {
-        path: 'posts/:id',
-        component: PostComponent
-      }
     ]
   }
 
