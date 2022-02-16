@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { CityComponent } from './city/city.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CityListComponent } from './city-list/city-list.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CityListComponent } from './city-list/city-list.component';
     HeaderComponent,
     HomeComponent,
     CityComponent,
-    CityListComponent
+    CityListComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
