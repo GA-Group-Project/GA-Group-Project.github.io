@@ -4,6 +4,7 @@ import { CityComponent } from './city/city.component';
 import {HomeComponent} from "./home/home.component";
 import { PostComponent } from './post/post.component';
 import { PostListComponent} from "./post-list/post-list.component";
+import {PostPageComponent} from "./post-page/post-page.component";
 
 const routes: Routes = [
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'posts/:id',
-    component: PostComponent
+    component: PostPageComponent
   },
 
   {
