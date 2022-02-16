@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { POSTS } from './posts';
 
 
 @Component({
@@ -8,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
+  // post: any;
+posts = POSTS
+ // posts:any = require('./posts');
   constructor() { }
 
   ngOnInit(): void {
