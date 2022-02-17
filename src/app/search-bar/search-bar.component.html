@@ -1,0 +1,15 @@
+<!-- <form class="d-flex">
+  <input [(ngModel)]="search" class="form-control me-2" type="text" placeholder="Search" aria-label="Search" (keypress)="findPost(search)"/>
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</form> -->
+
+<section>
+  <input [(ngModel)]="search" type="text" placeholder="Search"/>
+  <button class="btn btn-outline-success" type="submit" (click)="findPost(search)">Search</button>
+</section>
+
+
+<div *ngFor="let result of results">
+  <h1>{{result}}</h1>
+</div>
+
