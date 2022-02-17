@@ -25,7 +25,7 @@ export class PostComponent implements OnInit {
   constructor(private route: ActivatedRoute, private ele: ElementRef) {
   this.sortArray(this.posts);
     this.postNumber = this.ele.nativeElement.getAttribute('postNumber');
-    console.log(this.posts)
+    //console.log(this.posts)
   }
 
   sortArray(arr: any): any{

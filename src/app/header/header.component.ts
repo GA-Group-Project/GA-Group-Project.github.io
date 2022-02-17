@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
+import{ SearchBarComponent } from '../search-bar/search-bar.component'
 
 @Component({
   selector: 'app-header',
