@@ -4,11 +4,19 @@
     <h1>{{city.name}}</h1>
     <img src="{{city.img}}">
 
+    <section >
+      <h3>Here's the weather in {{weather.name}}:</h3>
+      <p>Currently {{weather.weather[0].description}}.</p>
+      <p>There's a high of {{weather.main.temp_max}} degrees and a low of {{weather.main.temp_min}} degrees.</p>
+      <img src="http://openweathermap.org/img/wn/{{weather.weather[0].icon}}@2x.png" alt="">
+    </section>
+
     <div *ngFor="let post of posts; index as i;">
       <div *ngIf="posts[i].cityId === city.id">
         <app-post [postNumber]="i"></app-post>
       </div>
     </div>
+
 
   </div>
 </div>

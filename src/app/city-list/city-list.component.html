@@ -1,7 +1,7 @@
 
 <div class="city-list">
   <h2>Cities</h2>
-  <a *ngFor="let city of cityList; index as i;"routerLink="/city/{{i}}">
+  <a *ngFor="let city of cities; index as i;"routerLink="/city/{{i}}">
     <div class="card mb-3" style="max-width: 540px;">
       <div class="row g-0">
         <div class="col-md-4">
@@ -9,7 +9,7 @@
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">{{cityList[i].name}}</h5>
+            <h5 class="card-title">{{cities[i].name}}</h5>
           </div>
         </div>
       </div>
