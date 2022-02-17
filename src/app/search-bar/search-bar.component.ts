@@ -21,7 +21,10 @@ export class SearchBarComponent implements OnInit {
   constructor() { }
 
   findPost(search: string) {
+    this.results = [];  // erases everything in the search result for each new search.
     console.log(search)
+    search = search.toLowerCase();
+    console.log('is this lowercase??' + search)
     this.searchSubject.next(search)
     // this.posts.findIndex((obj) => {
     //   if(obj.title === search || obj.desc === search) {
@@ -29,10 +32,15 @@ export class SearchBarComponent implements OnInit {
     // }})
 
     this.posts.forEach(post => {
-      if (post.title.includes(search)) {
-        this.results.push(post.title);
+      if (post.title.toLowerCase().includes(search) || post.desc.toLowerCase().includes(search)) {
+        this.results.push(post);
         console.log(this.results)
       }
+      // if (post.desc.toLowerCase().includes(search)) {
+      //   this.results.push(post);
+      //   console.log(this.results)
+      // }
+
     })
   }
 

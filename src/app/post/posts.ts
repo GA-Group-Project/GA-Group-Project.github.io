@@ -31,7 +31,7 @@ export const POSTS = [
     id: 3,
     "img": "https://st3.depositphotos.com/1001146/14087/i/600/depositphotos_140879866-stock-photo-aerial-view-of-miami-beach.jpg",
     "title": "Seattle is the best. ",
-    desc: "Seattle!",
+    desc: "Seattle! Rainy",
     cityId: 3,
     date: "2019-01-19"
   },
