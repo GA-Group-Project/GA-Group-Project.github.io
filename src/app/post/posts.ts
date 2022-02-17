@@ -5,7 +5,9 @@ export const POSTS = [
     "title": "London.",
     desc: "London is great",
     cityId: 0,
-    date: "2019-01-17"
+    date: "2019-01-17",
+    author: "Chris"
+
   },
 
   {
@@ -14,7 +16,8 @@ export const POSTS = [
     "title": "Sydney opera house!",
     desc: "Sydney",
     cityId: 1,
-    date: "2019-01-16"
+    date: "2019-01-16",
+    author: "Chris"
   },
 
   {
@@ -23,7 +26,8 @@ export const POSTS = [
     "title": "SF is awesome!",
     desc: "SF ",
     cityId: 2,
-    date: "2019-01-18"
+    date: "2019-01-18",
+    author: "Bob"
 
   },
 
@@ -33,7 +37,8 @@ export const POSTS = [
     "title": "Seattle is the best. ",
     desc: "Seattle! Rainy",
     cityId: 3,
-    date: "2019-01-19"
+    date: "2019-01-19",
+    author: "Li"
   },
 
   {
@@ -42,7 +47,18 @@ export const POSTS = [
     "title": "Fundon! great!",
     desc: "FUndon",
     cityId: 0,
-    date: "2019-01-20"
+    date: "2019-01-20",
+    author: "Wafeeq"
+  },
+
+  {
+    id: 5,
+    "img": "https://st3.depositphotos.com/1001146/14087/i/600/depositphotos_140879866-stock-photo-aerial-view-of-miami-beach.jpg",
+    "title": "Gibraltar is ....",
+    desc: "My trip to Gibraltar was interesting to say the least....",
+    cityId: 4,
+    date: "2019-01-21",
+    author: "Wafeeq"
   },
 
 ]

@@ -15,6 +15,11 @@ export const CITIES = [
 
   { "id": 3,
     "name": "Seattle",
+    "img":"https://st3.depositphotos.com/1001146/14087/i/600/depositphotos_140879866-stock-photo-aerial-view-of-miami-beach.jpg" },
+
+  { "id": 4,
+    "name": "Gibraltar",
     "img":"https://st3.depositphotos.com/1001146/14087/i/600/depositphotos_140879866-stock-photo-aerial-view-of-miami-beach.jpg" }
+
 ];
 
