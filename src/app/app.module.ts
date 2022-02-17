@@ -15,7 +15,8 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PostPageComponent } from './post-page/post-page.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { PostFormComponent } from './post-form/post-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     PostListComponent,
     PostPageComponent,
     SearchBarComponent,
+    PostFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

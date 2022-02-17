@@ -5,6 +5,10 @@ import {HomeComponent} from "./home/home.component";
 import { PostComponent } from './post/post.component';
 import { PostListComponent} from "./post-list/post-list.component";
 import {PostPageComponent} from "./post-page/post-page.component";
+import { PostFormComponent } from './post-form/post-form.component';
+
+
+
 
 const routes: Routes = [
   {
@@ -28,6 +32,12 @@ const routes: Routes = [
   {
     path: 'city/:id',
     component: CityComponent,
+    children: [
+    ]
+  },
+  {
+    path: 'post/new',
+    component: PostFormComponent,
     children: [
     ]
   }
