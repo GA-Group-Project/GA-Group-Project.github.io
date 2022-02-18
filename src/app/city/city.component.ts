@@ -18,7 +18,7 @@ export class CityComponent implements OnInit {
 
 key: string = '052f26926ae9784c2d677ca7bc5dec98'
 
-  posts = this.postsData.getPosts();
+  posts = this.postsData.getAllPosts();
 
   constructor(private route: ActivatedRoute,
               private http: HttpClient,
