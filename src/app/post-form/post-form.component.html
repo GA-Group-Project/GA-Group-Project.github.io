@@ -5,114 +5,111 @@
 
   </form> -->
 
-  <h3>Post</h3>
+
+<div class="col-md-7 col-lg-8 d-flex form-block">
+
+  <div class="col-md-7 col-lg-8">
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <div class="row g-3">
+      <div class="col-6">
+        <label for="id" class="form-label">ID#</label>
+        <div class="input-group has-validation">
+          <input type="number" class="form-control" id="id" placeholder="id number" formControlName="id" required>
+        </div>
+      </div>
+<!--  <div>-->
+<!--    <label for="id">-->
+<!--      ID-->
+<!--    </label>-->
+<!--    <input id="id" type="number" formControlName="id">-->
+<!--  </div>-->
+
+      <div class="col-6">
+        <label for="title" class="form-label">Title</label>
+        <div class="input-group has-validation">
+          <input type="text" class="form-control" id="title" placeholder="title" formControlName="title" required>
+        </div>
+      </div>
+
+<!--  <div>-->
+<!--    <label for="title">-->
+<!--      Title-->
+<!--    </label>-->
+<!--    <input id="title" type="text" formControlName="title"  >-->
+<!--  </div>-->
+
+      <div class="col-6">
+        <label for="author" class="form-label">Author</label>
+        <div class="input-group has-validation">
+          <input type="text" class="form-control" id="author" placeholder="author" formControlName="author" required>
+        </div>
+      </div>
+
+<!--  <div>-->
+<!--    <label for="author">-->
+<!--      Author-->
+<!--    </label>-->
+<!--    <input id="author" type="text" formControlName="author" >-->
+<!--  </div>-->
+
+      <div class="col-6">
+        <label for="content" class="form-label">content</label>
+        <div class="input-group has-validation">
+          <input type="text" class="form-control" id="content" placeholder="content" formControlName="content" required>
+        </div>
+      </div>
 
 
-<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+      <div class="col-6">
+        <label for="cityId" class="form-label">City Id</label>
+        <div class="input-group has-validation">
+          <input type="number" class="form-control" id="cityId" placeholder="City ID number" formControlName="cityId" required>
+        </div>
+      </div>
 
-  <div>
-    <label for="id">
-      ID
-    </label>
-    <input id="id" type="number" formControlName="id">
-  </div>
-
-  <div>
-    <label for="title">
-      Title
-    </label>
-    <input id="title" type="text" formControlName="title"  >
-  </div>
-
-  <div>
-    <label for="author">
-      Author
-    </label>
-    <input id="author" type="text" formControlName="author" >
-  </div>
+<!--  <div>-->
+<!--    <label for="cityId">-->
+<!--      City-->
+<!--    </label>-->
+<!--    <input id="cityId" type="number" formControlName="cityId">-->
+<!--  </div>-->
 
 
-  <div>
-    <label for="content">
-        content
-    </label>
-    <input id="content" type="text" formControlName="content">
-  </div>
+      <div class="col-6">
+        <label for="date" class="form-label">Date</label>
+        <div class="input-group has-validation">
+          <input type="date" class="form-control" id="date" placeholder="Date" formControlName="date" required>
+        </div>
+      </div>
 
-  <div>
-    <label for="cityId">
-      City
-    </label>
-    <input id="cityId" type="number" formControlName="cityId">
-  </div>
+<!--  <div>-->
+<!--    <label for="date">-->
+<!--      Date-->
+<!--    </label>-->
+<!--    <input id="date" type="text" formControlName="date">-->
+<!--  </div>-->
+      <div class="col-6">
+        <label for="img" class="form-label">Image URL</label>
+        <div class="input-group has-validation">
+          <input type="text" class="form-control" id="img" placeholder="Image URL" formControlName="img" required>
+        </div>
+      </div>
 
-
-  <div>
-    <label for="date">
-      Date
-    </label>
-    <input id="date" type="text" formControlName="date">
-  </div>
-
-  <div>
-    <label for="img">
-      Image
-    </label>
-    <input id="img" type="text" formControlName="img">
-  </div>
+<!--  <div>-->
+<!--    <label for="img">-->
+<!--      Image-->
+<!--    </label>-->
+<!--    <input id="img" type="text" formControlName="img">-->
+<!--  </div>-->
 
 
   <button class="button" type="submit" [disabled]="!postForm.valid">Submit your post</button>
-
+    </div>
 </form>
 
+</div>
 
 
-<!--
-<div class="col-md-7 col-lg-8">
-  <h4 class="mb-3">Post </h4>
-  <form class="needs-validation" novalidate>
-    <div class="row g-3">
-      <div class="col-sm-6">
-        <label for="post-title" class="form-label">Title</label>
-        <input type="text" class="form-control" id="post-title" placeholder="Title" value="" required>
-        <div class="invalid-feedback">
-          Valid post title is required.
-        </div>
-      </div>
 
-      <div class="col-sm-6">
-        <label for="post-author" class="form-label">Author</label>
-        <input type="text" class="form-control" id="post-author" placeholder="Author" value="" required>
-        <div class="invalid-feedback">
-          Valid post author is required.
-        </div>
-      </div>
 
-      <div class="col-12">
-        <label for="post-content" class="form-label">content</label>
-        <div class="input-group has-validation">
-          <input type="text" class="form-control" id="poat-content" placeholder="content" required>
-        <div class="invalid-feedback">
-            Post decription is required.
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12">
-        <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-        <input type="email" class="form-control" id="email" placeholder="you@example.com">
-        <div class="invalid-feedback">
-          Please enter a valid email address for shipping updates.
-        </div>
-      </div>
-
-      <div class="col-12">
-        <label for="address" class="form-label">Address</label>
-        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-        <div class="invalid-feedback">
-          Please enter your shipping address.
-        </div>
-      </div>
-
- -->
+</div>
