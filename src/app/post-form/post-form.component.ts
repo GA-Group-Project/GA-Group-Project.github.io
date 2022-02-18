@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
-import { POSTS } from '../post/posts';
+import { PostDataService } from "../post-data.service";
 import { Validators } from '@angular/forms';
 
 
@@ -11,18 +11,22 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./post-form.component.css']
 })
 export class PostFormComponent implements OnInit {
-  
-posts = POSTS;
+
+posts = this.postData.getPosts();
 
 postForm: any;
 
 
-  constructor( private formBuilder: FormBuilder) { 
+  constructor( private formBuilder: FormBuilder,
+                private postData: PostDataService) {
+
     this.postForm = this.formBuilder.group({
+      id: ['', Validators.required],
       title:['', [Validators.required, Validators.minLength(1),Validators.maxLength(200)]],
       author: ['', Validators.required],
-      description: ['', Validators.required],
-      cityId: ['', Validators.required],
+      content: ['', Validators.required],
+      cityId: [0 , Validators.required],
+      date: ['' , Validators.required],
       img: ['', Validators.required]
     });
   }
@@ -38,11 +42,18 @@ postForm: any;
 
   onSubmit(): void {
     // Process checkout data here
-  
-    console.warn('Your post has been submitted', this.postForm.value);
-    this.posts.push(this.postForm.value);
     console.log(this.posts);
-  
+    console.warn('Your post has been submitted', this.postForm.value);
+    // posts.push(this.postForm.value)
+    this.postData.addPost(this.postForm.value);
+    this.postData.setItem(this.postForm.value.id, JSON.stringify(this.postForm.value))
+    let retrievedObject = localStorage.getItem('8');
+    if ( retrievedObject){
+      console.log('retrievedObject: ', JSON.parse(retrievedObject));
+    }
+    console.log(this.posts);
+
+
     this.postForm.reset();
   }
 

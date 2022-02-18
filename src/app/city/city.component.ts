@@ -3,8 +3,7 @@ import { CityListComponent } from '../city-list/city-list.component';
 import { HttpClient } from "@angular/common/http";
 import { CITIES } from '../city-list/cities';
 import { ActivatedRoute } from '@angular/router';
-import { POSTS } from "../post/posts";
-
+import { PostDataService } from "../post-data.service";
 
 @Component({
   selector: 'app-city',
@@ -14,24 +13,21 @@ import { POSTS } from "../post/posts";
 export class CityComponent implements OnInit {
   city: any;
   cities = CITIES;
-  posts = POSTS;
 
   weather: any;
 
 key: string = '052f26926ae9784c2d677ca7bc5dec98'
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {
-    this.sortArray(this.posts);
+  posts = this.postsData.getAllPosts();
+
+  constructor(private route: ActivatedRoute,
+              private http: HttpClient,
+              private postsData: PostDataService) {
+    // this.sortArray(this.posts);
+    // this.posts = posts;
    }
 
-  sortArray(arr: any): any{
-    this.posts.sort(function(a,b){
-      // Turn your strings into dates, and then subtract them
-      // to get a value that is either negative, positive, or zero.
-      // @ts-ignore
-      return  new Date(b.date) - new Date(a.date);
-    });
-  }
+
 
 
   ngOnInit(): void {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModel } from '@angular/forms';
-import { POSTS } from "../post/posts";
+import { PostDataService } from "../post-data.service";
 import { Subject } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 
@@ -12,13 +12,14 @@ import { ActivatedRoute } from '@angular/router';
 
 export class SearchBarComponent implements OnInit {
 
-  posts = POSTS
+  posts = this.postData.getPosts();
+
   search: string = ''
   searchSubject = new Subject();
 
   results: any = []
 
-  constructor() { }
+  constructor(private postData: PostDataService) { }
 
   findPost(search: string) {
     this.results = [];  // erases everything in the search result for each new search.
@@ -32,7 +33,7 @@ export class SearchBarComponent implements OnInit {
     // }})
 
     this.posts.forEach(post => {
-      if (post.title.toLowerCase().includes(search) || post.desc.toLowerCase().includes(search)) {
+      if (post.title.toLowerCase().includes(search) || post.content.toLowerCase().includes(search)) {
         this.results.push(post);
         console.log(this.results)
       }

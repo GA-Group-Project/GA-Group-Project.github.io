@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { POSTS } from "../post/posts";
+import { PostDataService } from "../post-data.service";
 import  { ActivatedRoute } from "@angular/router";
 import { PostComponent } from "../post/post.component";
 
@@ -11,13 +11,14 @@ import { PostComponent } from "../post/post.component";
 export class PostPageComponent implements OnInit {
 
   post :any;
-  posts = POSTS;
+  posts = this.postData.getPosts();
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+              private postData: PostDataService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      this.post = POSTS.find(post => {
+      this.post = this.posts.find(post => {
         let paramId: string = params.get('id') || '';
         return post.id === parseInt(paramId)
       })
