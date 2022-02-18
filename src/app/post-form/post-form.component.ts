@@ -25,7 +25,7 @@ postForm: any;
       title:['', [Validators.required, Validators.minLength(1),Validators.maxLength(200)]],
       author: ['', Validators.required],
       content: ['', Validators.required],
-      cityId: ['' , Validators.required],
+      cityId: [0 , Validators.required],
       date: ['' , Validators.required],
       img: ['', Validators.required]
     });
@@ -44,7 +44,13 @@ postForm: any;
     // Process checkout data here
     console.log(this.posts);
     console.warn('Your post has been submitted', this.postForm.value);
+    // posts.push(this.postForm.value)
     this.postData.addPost(this.postForm.value);
+    this.postData.setItem(this.postForm.value.id, JSON.stringify(this.postForm.value))
+    let retrievedObject = localStorage.getItem('8');
+    if ( retrievedObject){
+      console.log('retrievedObject: ', JSON.parse(retrievedObject));
+    }
     console.log(this.posts);
 
 

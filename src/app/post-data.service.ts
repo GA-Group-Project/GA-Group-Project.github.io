@@ -12,11 +12,49 @@ export class PostDataService {
   constructor() { }
 
   getPosts(){
+
+    // localStorage.getItem(key)
+    let keys = Object.keys(localStorage)
+    console.log(keys);
     return this.posts;
+  }
+
+  getAllPosts(){
+    let values = [];
+    let keys = Object.keys(localStorage);
+    let i = keys.length;
+
+    this.posts.forEach(post => {
+      values.push(post);
+    })
+
+    while ( i-- ) {
+      // @ts-ignore
+      values.push( JSON.parse(localStorage.getItem(keys[i]) ));
+    }
+    console.log("Here are the values from getAllPosts()")
+    console.log(values)
+
+    // values = this.sortArray(values);
+    return values;
   }
 
   addPost(post: any){
     this.posts.push(post) ;
+  }
+
+  public setItem(key: string, value: string) {
+    localStorage.setItem(key, value);
+  }
+
+  public getItem(key: string){
+    return localStorage.getItem(key)
+  }
+  public removeItem(key:string) {
+    localStorage.removeItem(key);
+  }
+  public clear(){
+    localStorage.clear();
   }
 
   sortArray(arr: any): any{
@@ -29,3 +67,6 @@ export class PostDataService {
   }
 }
 
+// export class LocalStorageService {
+//   constructor() { }
+// }
