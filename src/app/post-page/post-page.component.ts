@@ -11,7 +11,7 @@ import { PostComponent } from "../post/post.component";
 export class PostPageComponent implements OnInit {
 
   post :any;
-  posts = this.postData.getPosts();
+  posts = this.postData.getAllPosts();
 
   constructor(private route: ActivatedRoute,
               private postData: PostDataService) { }
