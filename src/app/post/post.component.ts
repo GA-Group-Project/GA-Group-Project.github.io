@@ -26,19 +26,13 @@ export class PostComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private ele: ElementRef,
               private postData: PostDataService ) {
-
-  // this.sortArray(this.posts);
-  //   this.postNumber = this.ele.nativeElement.getAttribute('postNumber');
-  //   //console.log(this.posts)
   }
 
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
      if( this.posts){
-
        this.post = this.posts.find((post: any) => {
-
          let paramId: string = params.get('id') || '';
          return parseInt( post.id ) === parseInt(paramId)
        })

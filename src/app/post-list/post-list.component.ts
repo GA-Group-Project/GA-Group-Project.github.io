@@ -12,11 +12,9 @@ export class PostListComponent implements OnInit {
   locals = this.postData;
 
   constructor(private postData: PostDataService) {
-    // this.posts = this.postData.getPosts();
   }
 
   ngOnInit(): void {
-    // this.posts = this.postData.getPosts();
     console.log("This postlist is getting inited. ")
     console.log(this.posts);
     this.postData.getAllPosts();

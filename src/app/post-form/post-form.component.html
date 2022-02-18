@@ -1,11 +1,3 @@
-
-<!-- <form [formGroup]="postForm">
-
-    <button class="button" type="submit">Post submit</button>
-
-  </form> -->
-
-
 <div class="col-md-7 col-lg-8 d-flex form-block">
 
   <div class="col-md-7 col-lg-8">
@@ -17,12 +9,6 @@
           <input type="number" class="form-control" id="id" placeholder="id number" formControlName="id" required>
         </div>
       </div>
-<!--  <div>-->
-<!--    <label for="id">-->
-<!--      ID-->
-<!--    </label>-->
-<!--    <input id="id" type="number" formControlName="id">-->
-<!--  </div>-->
 
       <div class="col-6">
         <label for="title" class="form-label">Title</label>
@@ -31,26 +17,12 @@
         </div>
       </div>
 
-<!--  <div>-->
-<!--    <label for="title">-->
-<!--      Title-->
-<!--    </label>-->
-<!--    <input id="title" type="text" formControlName="title"  >-->
-<!--  </div>-->
-
       <div class="col-6">
         <label for="author" class="form-label">Author</label>
         <div class="input-group has-validation">
           <input type="text" class="form-control" id="author" placeholder="author" formControlName="author" required>
         </div>
       </div>
-
-<!--  <div>-->
-<!--    <label for="author">-->
-<!--      Author-->
-<!--    </label>-->
-<!--    <input id="author" type="text" formControlName="author" >-->
-<!--  </div>-->
 
       <div class="col-6">
         <label for="content" class="form-label">content</label>
@@ -59,21 +31,12 @@
         </div>
       </div>
 
-
       <div class="col-6">
         <label for="cityId" class="form-label">City Id</label>
         <div class="input-group has-validation">
           <input type="number" class="form-control" id="cityId" placeholder="City ID number" formControlName="cityId" required>
         </div>
       </div>
-
-<!--  <div>-->
-<!--    <label for="cityId">-->
-<!--      City-->
-<!--    </label>-->
-<!--    <input id="cityId" type="number" formControlName="cityId">-->
-<!--  </div>-->
-
 
       <div class="col-6">
         <label for="date" class="form-label">Date</label>
@@ -82,12 +45,6 @@
         </div>
       </div>
 
-<!--  <div>-->
-<!--    <label for="date">-->
-<!--      Date-->
-<!--    </label>-->
-<!--    <input id="date" type="text" formControlName="date">-->
-<!--  </div>-->
       <div class="col-6">
         <label for="img" class="form-label">Image URL</label>
         <div class="input-group has-validation">
@@ -95,12 +52,6 @@
         </div>
       </div>
 
-<!--  <div>-->
-<!--    <label for="img">-->
-<!--      Image-->
-<!--    </label>-->
-<!--    <input id="img" type="text" formControlName="img">-->
-<!--  </div>-->
 
 
   <button class="button" type="submit" [disabled]="!postForm.valid">Submit your post</button>

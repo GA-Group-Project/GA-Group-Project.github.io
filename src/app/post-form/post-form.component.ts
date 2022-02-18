@@ -12,8 +12,6 @@ import { Validators } from '@angular/forms';
 })
 export class PostFormComponent implements OnInit {
 
-posts = this.postData.getPosts();
-
 postForm: any;
 
 
@@ -32,27 +30,16 @@ postForm: any;
   }
 
   ngOnInit(): void {
-    // this.postForm = new FormGroup({
-    //   title: new FormControl([
-    //     Validators.required,
-    //     Validators.minLength(4)
-    //   ])
-    // })
     }
 
   onSubmit(): void {
-    // Process checkout data here
-    console.log(this.posts);
     console.warn('Your post has been submitted', this.postForm.value);
-    // posts.push(this.postForm.value)
     this.postData.addPost(this.postForm.value);
     this.postData.setItem(this.postForm.value.id, JSON.stringify(this.postForm.value))
     let retrievedObject = localStorage.getItem('8');
     if ( retrievedObject){
       console.log('retrievedObject: ', JSON.parse(retrievedObject));
     }
-    console.log(this.posts);
-
 
     this.postForm.reset();
   }
