@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { POSTS } from './posts';
 import { ActivatedRoute } from '@angular/router';
 import { CITIES } from '../city-list/cities';
-import { ElementRef} from "@angular/core";
+import { ElementRef } from "@angular/core";
+import { PostDataService } from "../post-data.service";
 
 
 @Component({
@@ -18,11 +18,15 @@ export class PostComponent implements OnInit {
   cities = CITIES
   @Input('postNumber') postNumber: number;
 
-  posts = POSTS
+  posts = this.postData.getPosts();
+
   postDate = new Date();
 
 
-  constructor(private route: ActivatedRoute, private ele: ElementRef) {
+  constructor(private route: ActivatedRoute,
+              private ele: ElementRef,
+              private postData: PostDataService ) {
+
   this.sortArray(this.posts);
     this.postNumber = this.ele.nativeElement.getAttribute('postNumber');
     //console.log(this.posts)
@@ -39,7 +43,7 @@ export class PostComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      this.post = POSTS.find(post => {
+      this.post = this.posts.find(post => {
         let paramId: string = params.get('id') || '';
         return post.id === parseInt(paramId)
       })

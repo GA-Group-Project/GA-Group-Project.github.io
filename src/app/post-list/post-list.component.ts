@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostDataService } from "../post-data.service";
 
 @Component({
   selector: 'app-post-list',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostListComponent implements OnInit {
 
-  constructor() { }
+  posts = this.postData.getPosts();
+
+  constructor(private postData: PostDataService) {
+    this.posts = this.postData.getPosts();
+  }
 
   ngOnInit(): void {
+    this.posts = this.postData.getPosts();
+    console.log("This postlist is getting inited. ")
+    console.log(this.posts);
   }
 
 }

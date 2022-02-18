@@ -2,13 +2,20 @@
 <!-- <form [formGroup]="postForm">
 
     <button class="button" type="submit">Post submit</button>
-  
+
   </form> -->
 
   <h3>Post</h3>
 
 
 <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+
+  <div>
+    <label for="id">
+      Image
+    </label>
+    <input id="id" type="text" formControlName="id">
+  </div>
 
   <div>
     <label for="title">
@@ -26,10 +33,10 @@
 
 
   <div>
-    <label for="description">
-        Description
+    <label for="content">
+        content
     </label>
-    <input id="description" type="text" formControlName="description">
+    <input id="content" type="text" formControlName="content">
   </div>
 
   <div>
@@ -39,6 +46,13 @@
     <input id="cityId" type="text" formControlName="cityId">
   </div>
 
+
+  <div>
+    <label for="date">
+      Image
+    </label>
+    <input id="date" type="text" formControlName="date">
+  </div>
 
   <div>
     <label for="img">
@@ -54,7 +68,7 @@
 
 
 
-<!-- 
+<!--
 <div class="col-md-7 col-lg-8">
   <h4 class="mb-3">Post </h4>
   <form class="needs-validation" novalidate>
@@ -76,9 +90,9 @@
       </div>
 
       <div class="col-12">
-        <label for="post-description" class="form-label">Description</label>
+        <label for="post-content" class="form-label">content</label>
         <div class="input-group has-validation">
-          <input type="text" class="form-control" id="poat-description" placeholder="Description" required>
+          <input type="text" class="form-control" id="poat-content" placeholder="content" required>
         <div class="invalid-feedback">
             Post decription is required.
           </div>
@@ -99,6 +113,6 @@
         <div class="invalid-feedback">
           Please enter your shipping address.
         </div>
-      </div> 
+      </div>
 
  -->
