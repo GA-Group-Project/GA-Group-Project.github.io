@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 
 export class SearchBarComponent implements OnInit {
 
-  posts = this.postData.getPosts();
+  posts = this.postData.getAllPosts();
 
   search: string = ''
   searchSubject = new Subject();
