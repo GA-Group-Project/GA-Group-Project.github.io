@@ -11,14 +11,6 @@ export class PostDataService {
 
   constructor() { }
 
-  getPosts(){
-
-    // localStorage.getItem(key)
-    let keys = Object.keys(localStorage)
-    console.log(keys);
-    return this.posts;
-  }
-
   getAllPosts(){
     let values = [];
     let keys = Object.keys(localStorage);
@@ -35,7 +27,6 @@ export class PostDataService {
     console.log("Here are the values from getAllPosts()")
     console.log(values)
 
-    // values = this.sortArray(values);
     return values;
   }
 
