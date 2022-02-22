@@ -34,7 +34,6 @@ postForm: any;
 
   onSubmit(): void {
     console.warn('Your post has been submitted', this.postForm.value);
-    this.postData.addPost(this.postForm.value);
     this.postData.setItem(this.postForm.value.id, JSON.stringify(this.postForm.value))
     let retrievedObject = localStorage.getItem('8');
     if ( retrievedObject){

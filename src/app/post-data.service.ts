@@ -26,7 +26,12 @@ export class PostDataService {
     }
     console.log("Here are the values from getAllPosts()")
     console.log(values)
-
+    values.sort(function(a,b){
+      // Turn your strings into dates, and then subtract them
+      // to get a value that is either negative, positive, or zero.
+      // @ts-ignore
+      return  new Date(b.date) - new Date(a.date);
+    });
     return values;
   }
 
@@ -48,16 +53,5 @@ export class PostDataService {
     localStorage.clear();
   }
 
-  sortArray(arr: any): any{
-    this.posts.sort(function(a,b){
-      // Turn your strings into dates, and then subtract them
-      // to get a value that is either negative, positive, or zero.
-      // @ts-ignore
-      return  new Date(b.date) - new Date(a.date);
-    });
-  }
 }
 
-// export class LocalStorageService {
-//   constructor() { }
-// }
